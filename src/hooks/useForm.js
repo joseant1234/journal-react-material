@@ -11,6 +11,10 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => {
       createValidators();
     }, [formState])
 
+    useEffect(() => {
+        setFormState(initialForm);
+    }, [initialForm])
+
     // se usa el useMemo para volver a calcular el valor solo si formValidation cambia
     const isFormValid = useMemo(() => {
         for (const formValue of Object.keys(formValidation)) {

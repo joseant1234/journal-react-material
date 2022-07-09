@@ -7,6 +7,11 @@ import { useForm } from "../../hooks/useForm";
 import { startGoogleSignIn, startLoginWithEmailPassword } from "../../store/auth/thunks";
 import { AuthLayout } from "../layout/AuthLayout";
 
+const formData = {
+  email: '',
+  password: '',
+}
+
 export const LoginPage = () => {
   // con el sx es como el style pero se tiene acceso al tema que se definió en el themeProvider
 
@@ -14,10 +19,12 @@ export const LoginPage = () => {
 
   const dispatch =  useDispatch();
 
-  const { email, password, onInputChange } = useForm({
-    email: '',
-    password: '',
-  });
+  // se genera re render si deja así
+  // const { email, password, onInputChange } = useForm({
+  //   email: '',
+  //   password: '',
+  // });
+  const { email, password, onInputChange } = useForm(formData);
 
   // memorizar el status, si el status cambia recien ahi se vuelve a memorizar el valor boolean de isAuthenticating
   const isAuthenticating = useMemo(() => status === 'checking', [status])
