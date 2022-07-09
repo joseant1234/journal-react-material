@@ -19,7 +19,7 @@ export const LoginPage = () => {
 
   const dispatch =  useDispatch();
 
-  // se genera re render si deja así
+  // se genera re render si deja así por el useEffect de [initialForm]
   // const { email, password, onInputChange } = useForm({
   //   email: '',
   //   password: '',
