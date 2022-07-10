@@ -19,7 +19,7 @@ export const LoginPage = () => {
 
   const dispatch =  useDispatch();
 
-  // se genera re render si deja así por el useEffect de [initialForm]
+  // se genera re render si deja así por el useEffect de [initialForm], porque cada vez se crea el objeto en useForm se crea un espacio en memoria y por eso dispara el efecto y eso hace q se renderize
   // const { email, password, onInputChange } = useForm({
   //   email: '',
   //   password: '',
